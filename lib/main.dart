@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_education/screen/splash.dart';
-import 'package:my_education/screen/login.dart';
-import 'package:my_education/screen/dashboard.dart';
+import 'package:my_education/screen/splash_screen.dart';
+import 'package:my_education/screen/login_screen.dart';
+import 'package:my_education/screen/dashboard_screen.dart';
 import 'package:my_education/screen/base.dart';
 
 void main() {

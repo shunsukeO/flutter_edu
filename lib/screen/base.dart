@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'createdQuestion.dart';
-import 'question.dart';
-import 'dashboard.dart';
+import 'created_question_screen.dart';
+import 'question_screen.dart';
+import 'dashboard_screen.dart';
 
 class BasePage extends StatefulWidget {
   @override
