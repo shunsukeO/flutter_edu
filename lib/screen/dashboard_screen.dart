@@ -7,12 +7,10 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Provider経由でBlocにアクセス
-    // final bloc = DashboardProvider.of(context).bloc;
-
+    final String accountId = ModalRoute.of(context).settings.arguments;
+    print('アカウントID: $accountId');
     return Scaffold(
       backgroundColor: Colors.green[100],
-        // Appbar
       appBar: AppBar(
         backgroundColor: Colors.green[100],
         title: Text(
@@ -21,39 +19,38 @@ class Dashboard extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Icon(Icons.home)
+        child: Container(
+          width: 300.0,
+          height: 450.0,
+          child: Card(
+            child: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    child: Text(
+                      'ほげほげさんの最近の活動',
+                      style: TextStyle(fontSize: 18)
+                    ),
+                    padding: EdgeInsets.all(10.0),
+                  ),
+                  Text('【更新情報】', style: TextStyle(fontSize: 18)),
+                  Text('・問題「応用情報技術者試験問題集1」が新しく作成されました！'),
+                  Padding(
+                    child: Text(
+                      '【最終問題解答日】',
+                      style: TextStyle(fontSize: 18)
+                    ),
+                    padding: EdgeInsets.all(10.0),
+                  ),
+                  Text('14日前')
+                ]
+              )
+            )
+          )
+        )
       )
-      // bottomNavigationBar: BottomNavigationBar(
-      //   // 初期選択されるタブを設定
-      //   currentIndex: _index(bloc),
-      //   items: const<BottomNavigationBarItem> [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.mode_edit),
-      //       title: Text('作成問題一覧'),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       title: Text('ダッシュボード'),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.library_books),
-      //       title: Text('問題一覧'),
-      //     ),
-      //   ],
-      //   // onTap: (int index) {
-      //   // }
-      // ),
     );
   }
-
-  // _index(DashboardBloc bloc) {
-  //   return StreamBuilder<int> (
-  //     stream: bloc.onTransition,
-  //     builder: (context, snapshot) {
-  //       return Text(
-  //         snapshot.hasData ? snapshot.data : '1'
-  //       );
-  //     }
-  //   );
-  // }
 }

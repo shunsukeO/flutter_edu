@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'created_question_screen.dart';
+import 'my_question_screen.dart';
 import 'question_screen.dart';
 import 'dashboard_screen.dart';
 
@@ -65,7 +65,7 @@ class _DashboardState extends State<BasePage> {
           });
         },
         children: [
-          CreatedQuestionScreen(),
+          MyQuestionScreen(),
           Dashboard(),
           QuestionScreen(),
         ]
@@ -91,7 +91,7 @@ class _DashboardState extends State<BasePage> {
           _pageController.animateToPage(
             index,
             duration: const Duration(milliseconds: 10),
-            curve: Curves.ease
+            curve: Curves.ease,
           );
         }
       ),
